@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Series Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Search Bar -->
+        <div class="search-bar">
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search" onclick="toggleSearchExpanded()">
+                    <div class="profile-icon">
+                        <img src="https://via.placeholder.com/32" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Movies Section -->
+        <div class="section-header">
+            <h2 class="section-title">Recommended movies</h2>
+            <span class="see-all">→</span>
+        </div>
+        <div class="content-grid">
+            <div class="content-item">
+                <span class="rating">8.2</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/ksBQ4oHQDdJwND8H90ay8CbMihU.jpg" alt="Infinity War">
+                <h3 class="content-title">INFINITY WAR</h3>
+            </div>
+            <div class="content-item">
+                <span class="rating">7.3</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/9eDQv0tnsrJWmqKmKLdxGxp10b7.jpg" alt="Beekeeper">
+                <h3 class="content-title">Beekeeper</h3>
+            </div>
+            <div class="content-item">
+                <span class="rating">7.8</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg" alt="The Batman">
+                <h3 class="content-title">Flash</h3>
+            </div>
+            <div class="content-item">
+                <span class="rating">8.4</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="John Wick 4">
+                <h3 class="content-title">John Wick 4</h3>
+            </div>
+            <div class="content-item">
+                <span class="rating">7.5</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/dm06L9pxDOL9jNSK4Cb6y139rrG.jpg" alt="Knock at the cabin">
+                <h3 class="content-title">Knock at the cabin</h3>
+            </div>
+            <div class="content-item">
+                <span class="rating">7.9</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg" alt="Knights of the Zodiac">
+                <h3 class="content-title">Knights of the Zodiac</h3>
+            </div>
+        </div>
+
+        <!-- Popular TV Series Section -->
+        <div class="section-header" id="tv-series-header">
+            <h2 class="section-title">Popular TV series</h2>
+            <span class="see-all">→</span>
+        </div>
+        <div class="content-grid">
+            <div class="content-item">
+                <span class="rating">8.6</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/z2yahl2uefxDCl0nogcRBstwruJ.jpg" alt="House of the dragon">
+                <h3 class="content-title">House of the dragon</h3>
+                <p class="content-year">2022</p>
+            </div>
+            <div class="content-item">
+                <span class="rating">8.2</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/4lYoeY8Ukux2EIL18izTeoW8m6P.jpg" alt="La casa de papel">
+                <h3 class="content-title">La casa de papel</h3>
+                <p class="content-year">2017</p>
+            </div>
+            <div class="content-item">
+                <span class="rating">8.3</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/p9u9WyM6py2SczyxvH7DVDfVszo.jpg" alt="The Vampire Diaries">
+                <h3 class="content-title">The Vampire Diaries</h3>
+                <p class="content-year">2009</p>
+            </div>
+            <div class="content-item">
+                <span class="rating">8.5</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/tNQWO6cNzQYCyvw36mUcAQQyf5F.jpg" alt="The last of us">
+                <h3 class="content-title">The last of us</h3>
+                <p class="content-year">2023</p>
+            </div>
+            <div class="content-item">
+                <span class="rating">8.7</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg" alt="Breaking Bad">
+                <h3 class="content-title">Breaking Bad</h3>
+                <p class="content-year">2008</p>
+            </div>
+            <div class="content-item">
+                <span class="rating">8.3</span>
+                <img class="content-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg" alt="DARK">
+                <h3 class="content-title">Dark</h3>
+                <p class="content-year">2017</p>
+            </div>
+        </div>
+
+        <!-- Search Expanded View / My Shows Grid View -->
+        <div id="searchExpanded" class="search-expanded">
+            <div class="search-expanded-header">
+                <div class="header-left">
+                    <button class="back-button" onclick="toggleSearchExpanded()">←</button>
+                    <span class="expanded-title">Search shows</span>
+                </div>
+                <button class="filter-button">≡</button>
+            </div>
+            
+            <div class="tabs-container">
+                <div class="tab-left active">
+                    <span class="tab-icon">📺</span>
+                    <span>TV series</span>
+                </div>
+                <div class="tab-right">
+                    <span class="tab-icon">🎬</span>
+                    <span>Movies</span>
+                </div>
+            </div>
+            
+            <div class="search-results-header">
+                <span class="show-count">45K shows</span>
+                <span class="selection-mode">≡ Selection mode</span>
+            </div>
+            
+            <div class="my-shows-grid">
+                <div class="grid-item">
+                    <span class="badge blue"><span class="eye-icon">👁️</span></span>
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/z2yahl2uefxDCl0nogcRBstwruJ.jpg" alt="House of the dragon">
+                    <h3 class="grid-title">House of the dragon</h3>
+                    <p class="grid-year">2022</p>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-poster" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2IkYQJlT26yXef2iot7dhRtavSC.jpg" alt="The resident">
+                    <h3 class="grid-title">The resident</h3>
+                    <p class="grid-year">2018</p>
+                </div>
+                <div class="grid-item">
+                    <span class="badge green">+</span>
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/u8ZHFj1jC384JEkTt3vNg1DfWEb.jpg" alt="Arrow">
+                    <h3 class="grid-title">Arrow</h3>
+                    <p class="grid-year">2012</p>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/u8ZHFj1jC384JEkTt3vNg1DfWEb.jpg" alt="Suits">
+                    <h3 class="grid-title">Suits</h3>
+                    <p class="grid-year">2011</p>
+                </div>
+                <div class="grid-item">
+                    <span class="badge yellow">★</span>
+                    <img class="grid-poster" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/1rTEcLsnOoKXfDdGlbg0RHDvoaE.jpg" alt="S.W.A.T">
+                    <h3 class="grid-title">S.W.A.T</h3>
+                    <p class="grid-year">2017</p>
+                </div>
+                <div class="grid-item">
+                    <span class="badge red">❌</span>
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/lW7MvZ4m49IUj2UrUu4z0xVVl81.jpg" alt="House">
+                    <h3 class="grid-title">House</h3>
+                    <p class="grid-year">2004</p>
+                </div>
+                <div class="grid-item">
+                    <span class="badge purple">🔍</span>
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/q8dWfc4JwQuv3HayIZeO84jAXED.jpg" alt="Dexter">
+                    <h3 class="grid-title">Dexter</h3>
+                    <p class="grid-year">2006</p>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/oqy7vnLWIFwoKBimCQfJHoVRYTS.jpg" alt="PrisonBreak">
+                    <h3 class="grid-title">PrisonBreak</h3>
+                    <p class="grid-year">2005</p>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tNQWO6cNzQYCyvw36mUcAQQyf5F.jpg" alt="The Last of Us">
+                    <h3 class="grid-title">The Last of Us</h3>
+                    <p class="grid-year">2023</p>
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation -->
+            <div class="search-bottom-nav">
+                <div class="nav-item">
+                    <div class="nav-icon">⚪</div>
+                    <span>Explore</span>
+                </div>
+                <div class="nav-item active" id="expandedMyShowsButton">
+                    <div class="nav-icon">📋</div>
+                    <span>My shows</span>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">📅</div>
+                    <span>Calendar</span>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">🔔</div>
+                    <span>Notifications</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation (Pantalla principal) -->
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <div class="nav-icon">⚪</div>
+            <span>Explore</span>
+        </div>
+        <div class="nav-item active" id="myShowsButton">
+            <div class="nav-icon">📋</div>
+            <span>My shows</span>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">📅</div>
+            <span>Calendar</span>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">🔔</div>
+            <span>Notifications</span>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar/ocultar la vista expandida de búsqueda
+        function toggleSearchExpanded() {
+            const searchExpanded = document.getElementById('searchExpanded');
+            searchExpanded.style.display = (searchExpanded.style.display === 'block') ? 'none' : 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Evento para mostrar la vista expandida al hacer clic en "My shows"
+        document.getElementById('myShowsButton').addEventListener('click', function() {
+            document.getElementById('searchExpanded').style.display = 'block';
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
