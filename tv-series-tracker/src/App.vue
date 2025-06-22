@@ -80,28 +80,12 @@
   </div>
 
   <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <div class="nav-item">
-      <div class="nav-icon">⚪</div>
-      <span>Explore</span>
-    </div>
-    <div class="nav-item active" id="myShowsButton" @click="toggleSearchExpanded">
-      <div class="nav-icon">📋</div>
-      <span>My shows</span>
-    </div>
-    <div class="nav-item">
-      <div class="nav-icon">📅</div>
-      <span>Calendar</span>
-    </div>
-    <div class="nav-item">
-      <div class="nav-icon">🔔</div>
-      <span>Notifications</span>
-    </div>
-  </div>
+  <BottomNav />
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
+import BottomNav from './components/BottomNav.vue'
 
 const movies = [
   { title: 'INFINITY WAR', rating: '8.2', img: 'https://media.themoviedb.org/t/p/w600_and_h900_bestv2/ksBQ4oHQDdJwND8H90ay8CbMihU.jpg' },
@@ -140,11 +124,4 @@ function toggleSearchExpanded() {
     window.scrollTo(0, 0)
   }
 }
-
-onMounted(() => {
-  const btn = document.getElementById('myShowsButton')
-  if (btn) {
-    btn.addEventListener('click', toggleSearchExpanded)
-  }
-})
 </script>
