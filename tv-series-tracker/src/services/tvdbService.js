@@ -1,5 +1,7 @@
 const API_KEY = import.meta.env.VITE_TVDB_API_KEY;
-const BASE_URL = 'https://api4.thetvdb.com/v4';
+const BASE_URL = 'https://api.thetvdb.com';
+
+ console.log("API KEY:", API_KEY);
 
 let token = null;
 
@@ -26,5 +28,7 @@ export async function getPopularSeries() {
 
   const data = await res.json();
   return data.data;
+ 
+
 }
-console.log("API KEY:", API_KEY);
+
