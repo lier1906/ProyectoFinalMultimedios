@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Header Styles */
+.search-bar {
+    background-color: #121212; /* Fondo negro, mismo que el body */
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a; /* Color de fondo oscuro para la barra de búsqueda */
+    border-radius: 25px;
+    padding: 0 5px;
+}
+
+.search-input {
+    background-color: transparent; /* Fondo transparente */
+    border: none;
+    border-radius: 25px;
+    padding: 12px 15px 12px 40px;
+    color: #aaa;
+    width: 100%;
+    font-size: 16px;
+    outline: none; /* Quita el contorno al hacer foco */
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
+}
+
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section Header Styles */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 16px 8px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.see-all {
+    color: #888;
+    font-size: 24px;
+}
+
+/* Línea divisoria solo entre películas y series */
+.section-header#tv-series-header {
+    border-top: 1px solid #333;
+    margin-top: 10px;
+    padding-top: 25px;
+}
+
+/* Movie/Show Grid Styles - Versión carrusel para móvil */
+.content-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 0 16px 15px;
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none; /* Para IE/Edge */
+}
+
+.content-grid::-webkit-scrollbar {
+    display: none; /* Para Chrome/Safari */
+}
+
+/* Estilo base para películas */
+.content-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    flex: 0 0 auto;
+    width: 60%; /* Ajuste para que se vean 2 completas y apenas la tercera */
+    min-width: 200px; /* Un poco más grande */
+    max-width: 220px; /* Un poco más grande */
+    scroll-snap-align: start;
+}
+
+/* Estilo específico para series de TV - más pequeñas */
+#tv-series-header + .content-grid .content-item {
+    width: 33%; /* Ancho más pequeño para que se vean tres o cuatro series */
+    min-width: 100px; /* Tamaño mínimo reducido */
+    max-width: 130px; /* Tamaño máximo reducido */
+}
+
+.content-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.content-title {
+    font-size: 14px;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Texto un poco más pequeño para los títulos de series */
+#tv-series-header + .content-grid .content-title {
+    font-size: 12px;
+}
+
+.content-year {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Año un poco más pequeño para series */
+#tv-series-header + .content-grid .content-year {
+    font-size: 10px;
+}
+
+.rating {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Ajustes responsive */
+@media (min-width: 768px) {
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: visible;
+        scroll-snap-type: none;
+        gap: 15px;
+    }
+    
+    .content-item, #tv-series-header + .content-grid .content-item {
+        width: auto;
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #202020;
+    padding: 12px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #888;
+    font-size: 12px;
+}
+
+.nav-item.active {
+    color: #fff;
+}
+
+.nav-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+/* Search Expanded View */
+.search-expanded {
+    background-color: #171717;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    display: none;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.search-expanded-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1c1c1c;
+    padding: 16px;
+    border-bottom: 1px solid #333;
+}
+
+/* Nuevo contenedor para agrupar la flecha y el título */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    margin-right: 8px;
+}
+
+.expanded-title {
+    color: #eee;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+/* Nuevo estilo para las pestañas separadas a izquierda y derecha */
+.tabs-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #333;
+}
+
+.tab-left {
+    padding: 12px 20px;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: flex-start;
+}
+
+.tab-right {
+    padding: 12px 20px;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.tab-left.active, .tab-right.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.tab-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.search-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 16px;
+}
+
+.show-count {
+    font-size: 14px;
+    color: #888;
+}
+
+.selection-mode {
+    font-size: 14px;
+    color: #888;
+    display: flex;
+    align-items: center;
+}
+
+/* Badges para los ítems de la búsqueda */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.badge.blue {
+    background-color: rgba(0, 100, 255, 0.8);
+}
+
+.badge.green {
+    background-color: rgba(0, 180, 0, 0.8);
+}
+
+.badge.yellow {
+    background-color: rgba(255, 215, 0, 0.8);
+}
+
+.badge.red {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.badge.purple {
+    background-color: rgba(180, 0, 180, 0.8);
+}
+
+.eye-icon {
+    font-size: 12px;
+}
+
+/* Barra de navegación en la pantalla de búsqueda */
+.search-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #212121;
+    padding: 12px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333;
+}
+
+/* JavaScript functionality */
+#searchInput:focus + .search-expanded {
+    display: block;
+}   
+.container {
+    padding-bottom: 70px; /* Añade suficiente espacio para que el scroll baje más allá de la bottom-nav */
+}
+
+/* Nuevo estilo para la cuadrícula de My Shows */
+.my-shows-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0 8px 80px;
+    margin-top: 10px;
+}
+
+.grid-item {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.grid-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.grid-title {
+    font-size: 12px;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.grid-year {
+    font-size: 10px;
+    color: #888;
+}
+
+@media (min-width: 768px) {
+    .my-shows-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 0 16px 80px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .my-shows-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
